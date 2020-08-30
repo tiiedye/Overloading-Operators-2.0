@@ -93,9 +93,9 @@ std::istream &operator>>(std::istream &in, Mystring &rhs) {
 // Your Definitions here!!
 
 // Unary minus, to lower
-Mystring Mystring::operator-() {
-    char *buff = new char[std::strlen(str) +1];
-    std::strcpy(buff, str);
+Mystring operator-(const Mystring &obj) {
+    char *buff = new char[std::strlen(obj.str) +1];
+    std::strcpy(buff, obj.str);
     for (size_t i=0; i < std::strlen(buff); i++) {
         buff[i] = std::tolower(buff[i]);
     }
@@ -105,7 +105,7 @@ Mystring Mystring::operator-() {
 }
 
 // check if equal
-bool Mystring::operator==(const Mystring &rhs) const {
+bool operator==(const Mystring &rhs) const {
     if (std::strcmp(str, rhs.str) == 0) {
         return true;
     } else{
@@ -114,7 +114,7 @@ bool Mystring::operator==(const Mystring &rhs) const {
 }
 
 // check for not equal
-bool Mystring::operator!=(const Mystring &rhs) const {
+bool operator!=(const Mystring &rhs) const {
     if (std::strcmp(str, rhs.str) != 0) {
         return true;
     } else {
@@ -123,7 +123,7 @@ bool Mystring::operator!=(const Mystring &rhs) const {
 }
 
 // check for less than
-bool Mystring::operator<(const Mystring &rhs) const {
+bool operator<(const Mystring &rhs) const {
     if (std::strcmp(str, rhs.str) < 0) {
         return true;
     } else {
@@ -132,7 +132,7 @@ bool Mystring::operator<(const Mystring &rhs) const {
 }
 
 // check for greater than
-bool Mystring::operator>(const Mystring &rhs) const {
+bool operator>(const Mystring &rhs) const {
     if (std::strcmp(str, rhs.str) > 0) {
         return true;
     } else {
@@ -141,7 +141,7 @@ bool Mystring::operator>(const Mystring &rhs) const {
 }
 
 // concatenate
-Mystring Mystring::operator+(const Mystring &rhs) const {
+Mystring operator+(const Mystring &rhs) const {
     char *buff = new char[std::strlen(str) + std::strlen(rhs.str) +1];
     std::strcpy(buff, str);
     std::strcat(buff, rhs.str);
@@ -151,13 +151,13 @@ Mystring Mystring::operator+(const Mystring &rhs) const {
 }
 
 // concatenate and assign
-Mystring Mystring::operator+=(const Mystring &rhs) {
+Mystring operator+=(const Mystring &rhs) {
     *this = *this + rhs;
     return *this;
 }
 
 // repeat
-Mystring Mystring::operator*(int n) const {
+Mystring operator*(int n) const {
     Mystring temp;
     for (int i = 1; i <= n; i++) {
         temp = temp + *this;
@@ -166,13 +166,13 @@ Mystring Mystring::operator*(int n) const {
 }
 
 // repeat and assign
-Mystring Mystring::operator*=(int n) {
+Mystring operator*=(int n) {
     *this = *this * n;
     return *this;
 }
 
 // pre-increment - make the string uppercase
-Mystring Mystring::operator++() {
+Mystring operator++() {
     for (size_t i=0; i < std::strlen(str); i++) {
         str[i] = std::toupper(str[i]);
     }
@@ -180,7 +180,7 @@ Mystring Mystring::operator++() {
 }
 
 // post-increment - make string uppercase
-Mystring Mystring::operator++(int) {
+Mystring operator++(int) {
     Mystring temp(*this);
     operator++();
     return temp;
