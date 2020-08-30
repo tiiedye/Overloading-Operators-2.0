@@ -4,14 +4,14 @@
 class Mystring {
 	// Friends :3
 	
-	friend Mystring operator-(const Mysting &obj);
-    friend bool operator==(const Mystring &lhs, const Mystring &rhs) const;
-    friend bool operator!=(const Mystring &lhs, const Mystring &rhs) const;
-    friend bool operator<(const Mystring &lhs, const Mystring &rhs) const;
-    friend bool operator>(const Mystring &lhs, const Mystring &rhs) const;
-    friend Mystring operator+(const Mystring &lhs, const Mystring &rhs) const;
-    friend Mystring operator+=(const Mystring &lhs, const Mystring &rhs);
-    friend Mystring operator*(const Mystring &lhs, int n) const;
+	friend Mystring operator-(const Mystring &obj);
+    friend bool operator==(const Mystring &lhs, const Mystring &rhs);
+    friend bool operator!=(const Mystring &lhs, const Mystring &rhs);
+    friend bool operator<(const Mystring &lhs, const Mystring &rhs);
+    friend bool operator>(const Mystring &lhs, const Mystring &rhs);
+    friend Mystring operator+(const Mystring &lhs, const Mystring &rhs);
+    friend Mystring operator+=(Mystring &lhs, const Mystring &rhs);
+    friend Mystring operator*(const Mystring &lhs, int n);
     friend Mystring operator*=(Mystring &lhs, int n);
     friend Mystring operator++(Mystring &obj);
     friend Mystring operator++(Mystring &obj, int);

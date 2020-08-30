@@ -105,7 +105,7 @@ Mystring operator-(const Mystring &obj) {
 }
 
 // check if equal
-bool operator==(const Mystring &lhs, const Mystring &rhs) const {
+bool operator==(const Mystring &lhs, const Mystring &rhs) {
     if (std::strcmp(lhs.str, rhs.str) == 0) {
         return true;
     } else{
@@ -114,7 +114,7 @@ bool operator==(const Mystring &lhs, const Mystring &rhs) const {
 }
 
 // check for not equal
-bool operator!=(const Mystring &lhs, const Mystring &rhs) const {
+bool operator!=(const Mystring &lhs, const Mystring &rhs) {
     if (std::strcmp(lhs.str, rhs.str) != 0) {
         return true;
     } else {
@@ -123,7 +123,7 @@ bool operator!=(const Mystring &lhs, const Mystring &rhs) const {
 }
 
 // check for less than
-bool operator<(const Mystring &lhs, const Mystring &rhs) const {
+bool operator<(const Mystring &lhs, const Mystring &rhs) {
     if (std::strcmp(lhs.str, rhs.str) < 0) {
         return true;
     } else {
@@ -132,7 +132,7 @@ bool operator<(const Mystring &lhs, const Mystring &rhs) const {
 }
 
 // check for greater than
-bool operator>(const Mystring &lhs, const Mystring &rhs) const {
+bool operator>(const Mystring &lhs, const Mystring &rhs) {
     if (std::strcmp(lhs.str, rhs.str) > 0) {
         return true;
     } else {
@@ -141,7 +141,7 @@ bool operator>(const Mystring &lhs, const Mystring &rhs) const {
 }
 
 // concatenate
-Mystring operator+(const Mystring &lhs, const Mystring &rhs) const {
+Mystring operator+(const Mystring &lhs, const Mystring &rhs) {
     char *buff = new char[std::strlen(lhs.str) + std::strlen(rhs.str) +1];
     std::strcpy(buff, lhs.str);
     std::strcat(buff, rhs.str);
@@ -151,13 +151,13 @@ Mystring operator+(const Mystring &lhs, const Mystring &rhs) const {
 }
 
 // concatenate and assign
-Mystring operator+=(const Mystring &lhs, const Mystring &rhs) {
+Mystring operator+=(Mystring &lhs, const Mystring &rhs) {
     lhs = lhs + rhs;
     return lhs;
 }
 
 // repeat
-Mystring operator*(const Mystring &lhs, int n) const {
+Mystring operator*(const Mystring &lhs, int n) {
     Mystring temp;
     for (int i = 1; i <= n; i++) {
         temp = temp + lhs;
