@@ -1,8 +1,20 @@
 #ifndef _MYSTRING_H_
 #define _MYSTRING_H_
 
-class Mystring
-{
+class Mystring {
+	// Friends :3
+	
+	friend Mystring operator-();
+    friend bool operator==(const Mystring &rhs) const;
+    friend bool operator!=(const Mystring &rhs) const;
+    friend bool operator<(const Mystring &rhs) const;
+    friend bool operator>(const Mystring &rhs) const;
+    friend Mystring operator+(const Mystring &rhs) const;
+    friend Mystring operator+=(const Mystring &rhs);
+    friend Mystring operator*(int n) const;
+    friend Mystring operator*=(int n);
+    friend Mystring operator++();
+    friend Mystring operator++(int);
     friend std::ostream &operator<<(std::ostream &os, const Mystring &rhs);
     friend std::istream &operator>>(std::istream &in, Mystring &rhs);
 
@@ -22,19 +34,6 @@ public:
     
     int get_length() const; // getters
     const char *get_str() const;
-
-    // Your Overloaded Operator Methods here!!
-    Mystring operator-();
-    bool operator==(const Mystring &rhs) const;
-    bool operator!=(const Mystring &rhs) const;
-    bool operator<(const Mystring &rhs) const;
-    bool operator>(const Mystring &rhs) const;
-    Mystring operator+(const Mystring &rhs) const;
-    Mystring operator+=(const Mystring &rhs);
-    Mystring operator*(int n) const;
-    Mystring operator*=(int n);
-    Mystring operator++();
-    Mystring operator++(int);
 };
 
 #endif // _MYSTRING_H_
